@@ -20,12 +20,13 @@ background-image:linear-gradient(to right,white,skyblue);
 
 
 
- <title>Js Validation</title>     
+ <title>Sign Up</title>     
 
 
  <script type="text/javascript">
  function validateForm()
   {
+      var id=document.getElementById("ID").value;
       var name=document.getElementById("Name").value;
       var gender= document.getElementsByName("gender");
       var e = document.getElementById("state");
@@ -35,6 +36,14 @@ background-image:linear-gradient(to right,white,skyblue);
       var pwd=document.getElementById("PWD").value; 
       var cpwd=document.getElementById("CPWD").value;
       var regularExpression = /^(?=.*[\d])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,16}$/;
+
+        if(id=="")
+        {
+            alert("ENTER ID TO PROCEED");
+            ID.focus();
+            return false;
+        }
+
       if(name=="")
       {
           alert("Name field empty");
@@ -144,9 +153,19 @@ background-image:linear-gradient(to right,white,skyblue);
 </head>
 <body>
 <center>
-
+    <font size=7>Sign Up Page</font>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
 <table border="0" bgcolor="skyblue">
 <form  name="UserReg" action="vsignup.php" method="post"  onSubmit="return validateForm()"> 
+
+    <tr>
+        <td height="28" align="right">ID :&nbsp;</td>
+        <td height="28"><input type="number"  id="ID" name="ID" /></td> 
+    </tr>
 
    <tr>
        <td height="28" align="right">Name :&nbsp;</td>

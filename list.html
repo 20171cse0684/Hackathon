@@ -1,8 +1,12 @@
 <html>
 <head>
-<title>JS Bin</title>
+<title>List Creator</title>
 <style>
-body {padding-top:50px} 
+body
+{
+padding-top:50px;
+background-image:linear-gradient(to right,white,skyblue);
+}
 </style> 
 <script>
 var x = 0;
@@ -30,9 +34,13 @@ function display_array()
 </script>
 </head>
 <body>
+    <h1>List Creator</h1>
+    <hr/>
 <input type="text" id="text1"></input>
 <input type="button" id="button1" value="Add" onclick="add_element_to_array();"></input>
 <input type="button" id="button2" value="Display" onclick="display_array();"></input>
-<div id="Result"></div> 
+<div id="Result"></div>
+<br/>
+<div><input type="button" value="Log out" OnClick=" location.href='login.html'"></div> 
 </body>
 </html>
