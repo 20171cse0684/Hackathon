@@ -18,6 +18,14 @@ background-image:linear-gradient(to right,white,skyblue);
 
     <script type="text/javascript">
     function newfunct(){
+        var name=document.getElementById("Name").value;
+        if(name=="")
+        {
+            alert("enter name");
+            Name.focus();
+            return false;
+            
+        }
 
     }
         
@@ -25,19 +33,22 @@ background-image:linear-gradient(to right,white,skyblue);
     </head>
     <body>
         <table border="0" bgcolor="skyblue">
-            <form  name="UserReg" action="User.html" method="post"  onSubmit="return newfunct()"> 
+            <form  name="UserReg" action="vlogin.php" method="post"  onSubmit="return newfunct()"> 
             
                <tr>
                    <td height="28" align="right">Name :&nbsp;</td>
-                   <td height="28"><input type="text"  id="Name" size="25"   /></td> 
+                   <td height="28"><input type="text"  id="Name" name="Name" size="25"   /></td> 
                </tr>
                    <tr>
                     <td height="28" align="right">Password  :&nbsp;<div id="right_password" ></div</td>
-                   <td height="28"><input type="password" id="PWD" size="25"  /><td>
+                   <td height="28"><input type="password" id="PWD" size="25" name="PWD" /><td>
                </tr>
                <tr>
                <td height="35"></td>
-               <td height="35"><input type="submit" value="log_in" name="userlogin"  /></td> 
+               <td height="35"><input type="submit" value="log_in" name="userlogin"  /></td>
+               
+               <td align="center" valign="middle"><input type="button" value="sign-up
+                "onClick="location.href='sign_up.html'"></td>
                </tr>
             
     </body>

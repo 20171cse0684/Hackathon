@@ -27,15 +27,11 @@ background-image:linear-gradient(to right,white,skyblue);
  function validateForm()
   {
       var name=document.getElementById("Name").value;
-      var age=document.getElementById("Age").value;
       var gender= document.getElementsByName("gender");
-      var yob=document.getElementById("YOB").value;
-      var adress=document.getElementById("ad").value;
       var e = document.getElementById("state");
       var strUser = e.options[e.selectedIndex].value;
       var no=document.getElementById("phone").value;
       var x=document.getElementById("e").value;
-      var uid=document.getElementById("UID").value;
       var pwd=document.getElementById("PWD").value; 
       var cpwd=document.getElementById("CPWD").value;
       var regularExpression = /^(?=.*[\d])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,16}$/;
@@ -65,53 +61,13 @@ background-image:linear-gradient(to right,white,skyblue);
 	      Name.focus();
           return false;
 	  }
-	  if(age=="")
-      {
-	    alert("Age field empty");
-	    Age.focus();   
-		return false;
-	  }
-	  if(age<20||age>80)
-      {
-        alert("Age value between 20 and 80 ");
-	    Age.focus();    
-	    return false;
-	  }
-	  else
-	  {
-      for(i=0;i<age.length;i++)
-	  {
-      if(!(age.charAt(i)>='0'&&age.charAt(i)<='9'))
-      {
-        alert("enter  number only in age field");
-        Age.focus();   
-		return false;  
-      }
-	  }
-   }
+	  
     if ( (gender[0].checked == false ) && ( gender[1].checked == false ) ) 
     {
         alert ( "Please choose your Gender: Male or Female" ); 
         return false;
 	}
-   if(yob=="")
-   {
-       alert("Year of birth field empty");
-	   YOB.focus();
-       return false;
-   }
-   else if(2019-age!=yob)
-	{
-		alert("enter exact year of birth")
-		YOB.focus();
-		document.getElementById("YOB").value="";
-		return false;
-}
-   if(adress=="")
-   {
-       alert("Address field empty");
-       return false;
-   }
+
    if(no=="")
    {
        alert("phone field empty");
@@ -152,15 +108,14 @@ background-image:linear-gradient(to right,white,skyblue);
             alert("Not a valid e-mail address");
             return false;
     }
-	document.getElementById("UID").value=document.getElementById("e").value;
-    PWD.focus();
+	
     }
     
     if(pwd=="")
     {
         alert("password field is empty")
-        PWD.focus()
         return false;
+        PWD.focus()
 	}
    if (!regularExpression.test(pwd))
    {
@@ -191,29 +146,20 @@ background-image:linear-gradient(to right,white,skyblue);
 <center>
 
 <table border="0" bgcolor="skyblue">
-<form  name="UserReg" action="User.html" method="post"  onSubmit="return validateForm()"> 
+<form  name="UserReg" action="vsignup.php" method="post"  onSubmit="return validateForm()"> 
 
    <tr>
        <td height="28" align="right">Name :&nbsp;</td>
-       <td height="28"><input type="text"  id="Name" size="25"   /></td> 
+       <td height="28"><input type="text"  id="Name" name="name" size="25"   /></td> 
    </tr>
-    <tr>
-       <td height="28"  align="right">Age  :&nbsp;</td>
-      <td height="28"><input type="text" id="Age" size="25"  /></td>
-  </tr>
+
  <tr>
        <td height="28"  align="right">Gender  :&nbsp;</td>
       <td height="28"><input type="radio" name="gender" value="male"> Male
 	 <input type="radio" name="gender" value="female"> Female</td>
   </tr>
-  <tr>
-       <td height="28"  align="right">Year of Birth  :&nbsp;</td>
-      <td height="28"><input type="text" id="YOB" size="25"  /></td>
-  </tr>
-   <tr>
-       <td height="28"  align="right" valign="top">Adress  :&nbsp;</td>
-      <td ><textarea rows="3" cols="15" id="ad"></textarea><td>
-  </tr>
+ 
+   
 <tr>
        <td height="28"  align="right">Mob_No  :&nbsp;</td>
       <td height="28"><input type="text" id="phone" size="25"  /><td>
@@ -237,13 +183,10 @@ background-image:linear-gradient(to right,white,skyblue);
        <td height="28"  align="right">Email_id :&nbsp;</td>
       <td height="28"><input type="text" id="e" size="25"  /></td>
   </tr>
-<tr>
-       <td height="28"  align="right">UID  :&nbsp;</td>
-      <td height="28"><input type="text" id="UID" size="25"  /><td>
-  </tr>
+
 <tr>
        <td height="28" align="right">Password  :&nbsp;<div id="right_password" ></div</td>
-      <td height="28"><input type="password" id="PWD" size="25"  /><td>
+      <td height="28"><input type="password" id="PWD" name="PWD" size="25"  /><td>
   </tr>
 <tr>
        <td height="28"  align="right">Conf.Pwd  :&nbsp;</td>
