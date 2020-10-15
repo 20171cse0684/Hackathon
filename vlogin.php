@@ -28,6 +28,9 @@ if($row['Password']!=$pass)
 {
 
 echo"password is not matching";
+echo '<form name="Patient" action="login.html" method="get">';
+echo '<input type="submit" value="Try again">';
+echo '</form>';
 break;
 
 }
@@ -37,14 +40,12 @@ header('location:list.html');
 
 }
 }else {echo"wrong user name";
-    echo '<form name="Patient" action="login.html" method="get">';
-    echo '<input type="submit" value="Try again">';
+    echo '<form name="Patient" action="sign_up.html" method="get">';
+    echo '<input type="submit" value="Please Sign up here">';
     echo '</form>';
 }
-} else echo"ID should be unique Always (ERROR)";
-       echo '<form name="Patient" action="login.html" method="get">';
-        echo '<input type="submit" value="Click here to log in">';
-        echo '</form>';
+} else echo"Error please go back";
+       
 mysqli_free_result($res);
 }
 ?>

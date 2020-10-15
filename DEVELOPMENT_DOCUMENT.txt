@@ -1,0 +1,58 @@
+DEVELOPMENT DOCUMENT:
+
+
+1) Languages used:
+	1)JavaScript
+	2)PHP
+	3)MySQL
+
+2) Files Used:
+	1) login.html:
+		This is html file that gets two parameter inputs from the user
+		that is "Name" and "Password". Then it passes these parameters
+		to login.php .
+	2) vlogin.php:
+		This is a php file that checks with database to check if User
+		exits or not, if not it return error and option to sign up
+		if password is wrong it gives option to try again. If Name
+		and password exists then it forwards to list.html
+
+	3) sign_up.html:
+		This is html file which validates all the parameters before it
+		can proceed to vsignup.php the parameters are:
+		1) ID - primary key Int
+		2) Name- varchar(20)
+		3) Gender - radiobuttons
+		4) MObile number - Int
+		5) State - list of states
+		6) Email id - Gets in email id format
+		7) Password - Has to be atleast 8 charecters with one capital
+				and one special charecter and one number
+		8) Confirm password - checks if password and confirm password
+				       are same.
+
+	4) vsignup.php:
+		This is a php file that takes input from sign_up.html and update
+		user name and password in the database table (users)
+
+	5) list.html:
+		This is html file that takes input from user and puts it in list
+		when add button is clicked. when display is clicked it displayes
+		all the items present in the list
+	
+	6) admin.php:
+		this is a php file along with html which displays all the users
+		who signed up in a grid
+	
+
+	7) connect.php:
+		This is a php file which is used to connect to database.
+
+3) Database:
+
+	1)Database Name: hackathon_db
+	2)Tables:
+		1)users_t: ID -primary key
+			   Name -varchar(20)
+			   Password -varchar(20)
+		2)list: iteam -varchar(20)
